@@ -9,6 +9,7 @@ export const signup = async (req, res) => {
     if (!fullName || !email || !password) {
       return res.status(400).json({ message: "All fields are required" });
     }
+
     if (password.length < 6) {
       return res
         .status(400)
@@ -29,6 +30,7 @@ export const signup = async (req, res) => {
     });
 
     if (newUser) {
+      // generate jwt token here
       generateToken(newUser._id, res);
       await newUser.save();
 
@@ -53,13 +55,12 @@ export const login = async (req, res) => {
     const user = await User.findOne({ email });
 
     if (!user) {
-      return res.status(400).json({ message: "Invalid Credentials" });
+      return res.status(400).json({ message: "Invalid credentials" });
     }
 
     const isPasswordCorrect = await bcrypt.compare(password, user.password);
-
     if (!isPasswordCorrect) {
-      return res.status(400).json({ message: "Invalid Credentials" });
+      return res.status(400).json({ message: "Invalid credentials" });
     }
 
     generateToken(user._id, res);
@@ -80,7 +81,7 @@ export const login = async (req, res) => {
 export const logout = (req, res) => {
   try {
     res.cookie("jwt", "", { maxAge: 0 });
-    res.status(200).json({ message: "Logged Out successfully" });
+    res.status(200).json({ message: "Logged out successfully" });
   } catch (error) {
     console.log("Error in logout controller", error.message);
     res.status(500).json({ message: "Internal Server Error" });
