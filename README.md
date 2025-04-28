@@ -13,7 +13,7 @@ A real-time chat experience built with the MERN stack and powered by Socket.io.
 - **🔴 Online Status Indicators** — See who’s online at a glance
 - **🔒 Secure Authentication** — JWT-powered login and registration
 - **📱 Responsive Design** — Perfectly optimized for mobile, tablet, and desktop
-- **🐂⃣ Message History** — Access your past conversations anytime
+- **🧾 Message History** — Access your past conversations anytime
 - **🔍 Contact Filters** — Quickly find online contacts
 - **🖼️ Profile Management** — Update your profile details and avatar
 - **🚀 Optimized Performance** — Fast loads and smooth UI transitions
