@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { useChatStore } from "../store/useChatStore";
+import { useAuthStore } from "../store/useAuthStore";
 import SidebarSkeleton from "./skeletons/SidebarSkeleton";
 import { Users } from "lucide-react";
-import { useAuthStore } from "../store/useAuthStore";
 
 const Sidebar = () => {
   const { getUsers, users, selectedUser, setSelectedUser, isUsersLoading } =
@@ -44,6 +44,7 @@ const Sidebar = () => {
           </span>
         </div>
       </div>
+
       <div className="overflow-y-auto w-full py-3">
         {filteredUsers.map((user) => (
           <button
@@ -90,5 +91,4 @@ const Sidebar = () => {
     </aside>
   );
 };
-
 export default Sidebar;
