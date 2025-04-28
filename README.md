@@ -4,7 +4,6 @@
 A real-time chat experience built with the MERN stack and powered by Socket.io.
 
 🔗 [**Live Demo**](https://chattr-iwds.onrender.com/)
-<a href="https://chattr-iwds.onrender.com/" target="_blank">Live Demo</a>
 
 ---
 
