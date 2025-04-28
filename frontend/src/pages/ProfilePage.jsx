@@ -8,6 +8,16 @@ const ProfilePage = () => {
 
   const handleImageUpload = async (e) => {
     const file = e.target.files[0];
+
+    const maxSizeMB = 10; //Set the img size
+    const maxSizeInBytes = maxSizeMB * 1024 * 1024;
+
+    if (file.size > maxSizeInBytes) {
+      toast.error("Image size too large");
+      toast.error("Upload an image of size less than 10MB");
+      return;
+    }
+
     if (!file) return;
 
     const reader = new FileReader();
