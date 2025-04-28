@@ -178,4 +178,4 @@ We welcome contributions from the community! Here's how you can help:
 
 ---
 
-> Built with ❤️ by [Your Name or Team Name]
+> Built with ❤️
